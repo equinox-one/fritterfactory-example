@@ -1,0 +1,16 @@
+group 'one.equinox.fritterfactory'
+version '0.0.1'
+
+apply plugin: 'java'
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+
+    compile 'one.equinox.fritterfactory:fritterfactory:+'
+    compile 'one.equinox:symbols:+'
+}
