@@ -3,6 +3,7 @@ package one.equinox.fritterfactory.example;
 import one.equinox.fritterfactory.example.model.Adress;
 import one.equinox.fritterfactory.FritterFactory;
 import one.equinox.fritterfactory.example.model.Person;
+import one.equinox.fritterfactory.example.providers.LocalDateProvider;
 import one.equinox.fritterfactory.mold.MapMold;
 import one.equinox.fritterfactory.providers.ModelProvider;
 import one.equinox.fritterfactory.providers.images.PersonImageProvider;
@@ -12,6 +13,9 @@ import one.equinox.fritterfactory.providers.lorem.FirstNameProvider;
 import one.equinox.fritterfactory.providers.lorem.WordProvider;
 import one.equinox.fritterfactory.providers.primitives.IntegerProvider;
 import one.equinox.fritterfactory.example.model.symbols.*;
+import org.joda.time.DateTime;
+import org.joda.time.LocalDate;
+
 import javax.inject.Provider;
 import java.util.List;
 
@@ -32,6 +36,7 @@ public class Sample {
      */
     public void sample(){
         FritterFactory fritterFactory = new FritterFactory();
+        fritterFactory.addProvider(LocalDate.class, new LocalDateProvider());
         List<Person> persons = fritterFactory.buildList(Person.class, 3);
         System.out.println("Persons with default provider");
         System.out.println(persons);
@@ -42,8 +47,9 @@ public class Sample {
      */
     public void sampleWithMolds(){
         FritterFactory fritterFactory = createFactoryWithMolds();
+        fritterFactory.addProvider(LocalDate.class, new LocalDateProvider());
         List<Person> persons = fritterFactory.buildList(Person.class, 3);
-        System.out.println("Persons with custom mold provider");
+        System.out.println("Persons with custom mold provider");cd 
         System.out.println(persons);
     }
 

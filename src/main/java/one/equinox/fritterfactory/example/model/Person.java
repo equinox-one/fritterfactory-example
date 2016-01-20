@@ -1,6 +1,7 @@
 package one.equinox.fritterfactory.example.model;
 
 import one.equinox.symbols.Symbolize;
+import org.joda.time.LocalDate;
 
 /**
  * Sample model of a person
@@ -13,7 +14,7 @@ public class Person {
     Adress adress;
     String description;
     Category category;
-
+    LocalDate birthDate;
     String image;
 
     @Override
@@ -25,6 +26,7 @@ public class Person {
                 ", adress=" + adress +
                 ", description='" + description + '\'' +
                 ", category=" + category +
+                ", birthDate=" + birthDate +
                 ", image='" + image + '\'' +
                 '}';
     }
